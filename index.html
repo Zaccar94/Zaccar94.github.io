@@ -1,7 +1,57 @@
 <html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Startseite</title>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    </head>
 <body>
 <h2>Willkommen auf der Startseite!</h2>
 <h3>Verzeichnis</h3>
-<p><a href="https://zaccar94.github.io/todos.html">To-Do-Liste</a></p>
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            To-Do-Liste
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Eine simple To-Do-Liste. Welche online abrufbar ist und meine Aufgaben zeigt.<p> <a href="https://zaccar94.github.io/todos.html">Link</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Essensinformation
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Eine Liste mit den Menüs und Tagesangeboten viele Restaurants in der Nähe.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          In Arbeit...
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+           Dieser Menüpunkt ist noch nicht fertig ausgearbeitet und wird in kürze aktuallisiert.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<script src="Bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 </html>
