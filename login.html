@@ -23,7 +23,7 @@
     <form>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Benutzername</label>
-          <input type="user" class="form-control" id="username" aria-describedby="emailHelp">
+          <input type="user" class="form-control" id="username">
           <div id="emailHelp" class="form-text">Wir werden ihre Daten an alle anderen weitergeben. Sie müssen nicht zustimmen.</div>
         </div>
         <div class="mb-3">
@@ -31,7 +31,7 @@
           <input type="password" class="form-control" id="passwort">
         </div>
         <button type="button" onclick="Login()" class="btn btn-primary">Login</button>
-        <a href="https://zaccar94.github.io/pech.html" class="btn btn-primary">Passwort vergessen</a>
+        <a href="https://de.w3docs.com/" class="btn btn-primary">Passwort vergessen</a>
       </form>
 
     <script>
@@ -39,10 +39,10 @@
 
         function Login(){
 
-            if(document.getElementById('username') == "admin"){
-                console.log("Username korrekt!")
-                if(document.getElementById('passwort') == "admin"){
+            if(document.getElementById("username").value == "admin"){
+                if(document.getElementById('passwort').value == "admin"){
                     console.log("Loged In!")
+                    window.location.href = 'https://zaccar94.github.io/todos.html';
                 }
             }
         }
