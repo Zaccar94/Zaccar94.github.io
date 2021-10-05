@@ -36,13 +36,15 @@
 
     <script>
         src="Bootstrap/js/bootstrap.min.js"
+        var checklog = 0;
 
         function Login(){
 
             if(document.getElementById("username").value == "admin"){
                 if(document.getElementById('passwort').value == "admin"){
                     console.log("Loged In!")
-                    window.location.href = 'https://zaccar94.github.io/todos.html';
+                    window.sessionStorage.setItem(0, 1);
+                    window.location.href ='https://zaccar94.github.io/todos.html';                    
                 }else{
                     alert("Falscher Benutzername oder falsches Passwort!");
                 }
@@ -51,7 +53,7 @@
                 alert("Falscher Benutzername oder falsches Passwort!");
             }
         }
-
     </script>
+  
 </body>
 </html>
