@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Startseite</title>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        #list1 .form-control {
+            border-color: transparent;
+        }
+        #list1 .form-control:focus {
+            border-color: transparent;
+            box-shadow: none;
+        }
+        #list1 .select-input.form-control[readonly]:not([disabled]) {
+            background-color: #fbfbfb;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Benutzername</label>
+          <input type="user" class="form-control" id="username">
+          <div id="emailHelp" class="form-text">Wir werden ihre Daten an alle anderen weitergeben. Sie müssen nicht zustimmen.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Passwort</label>
+          <input type="password" class="form-control" id="passwort">
+        </div>
+        <button type="button" onclick="Login()" class="btn btn-primary">Login</button>
+        <a href="https://zaccar94.github.io/pech.html" class="btn btn-primary">Passwort vergessen</a>
+      </form>
+
+    <script>
+        src="Bootstrap/js/bootstrap.min.js"
+
+        function Login(){
+
+            if(document.getElementById("username").value == "admin"){
+                if(document.getElementById('passwort').value == "admin"){
+                    console.log("Loged In!")
+                    window.location.href = 'https://zaccar94.github.io/todos.html';
+                }
+            }
+            <?php echo 'alert("OK");' ?>
+        }
+
+        Login();
+
+    </script>
+
+    
+</body>
+</html>
