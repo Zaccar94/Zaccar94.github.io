@@ -6,7 +6,9 @@
     var todo = ["Website online stellen","Design anpassen","Login implementieren","Datenbank einrichten","Hinzufügen von To-Dos implementieren","Löschen von To-Dos hinzufügen"];
 
     while(x < 20){
-        window.sessionStorage.setItem(x + 1, todo[x]);
+        if(todo[x] != ""){
+            window.sessionStorage.setItem(x + 1, todo[x]);
+        }
         x++;
     }
     window.location.href ='https://zaccar94.github.io/todos.html';
