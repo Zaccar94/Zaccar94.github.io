@@ -1,0 +1,4 @@
+<h1>AJAX</h1>
+<p>Wenn du das hier lesen kann, hat der Code fehlerfrei funktioniert.</p>
+
+
