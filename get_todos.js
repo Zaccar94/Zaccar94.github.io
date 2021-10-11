@@ -1,3 +1,4 @@
+<script> 
     var x = 0;
     var test = "";
     var todo = ["Website online stellen","Design anpassen","Login implementieren","Datenbank einrichten","Hinzufügen von To-Dos implementieren","Löschen von To-Dos hinzufügen"];
@@ -6,4 +7,4 @@
         window.sessionStorage.setItem(x + 1, todo[x]);
     }
     window.location.href ='https://zaccar94.github.io/todos.html';
-
+</script>
