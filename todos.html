@@ -23,13 +23,14 @@
 <body>
 
   <script>
-    var x = 0;
     var anzahl = 0;
     var todos = [];
-    
+    var x = sessionStorage.getItem(0);
+      
     if(x != 1){
       window.location.href ='https://zaccar94.github.io/login.html';
     }
+      
     x = 1;
     while(x < 11){
       if(sessionStorage.getItem(x) != "undefined" && sessionStorage.getItem(x) != null){
