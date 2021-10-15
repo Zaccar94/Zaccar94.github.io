@@ -23,12 +23,22 @@
 <body>
 
   <script>
-    var x = sessionStorage.getItem(0);
-    console.log(x);
+    var x = 0;
+    var anzahl = 0;
+    var todos = [];
+    
     if(x != 1){
       window.location.href ='https://zaccar94.github.io/login.html';
     }
-
+    x = 1;
+    while(x < 11){
+      if(sessionStorage.getItem(x) != "undefined" && sessionStorage.getItem(x) != null){
+        todos.push(sessionStorage.getItem(x));
+        anzahl++;
+      }
+      x++;
+    }
+    x = 0;
   </script>
 
     <section class="vh-100">
@@ -58,119 +68,425 @@
                   </div>
       
                   <hr class="my-4">
-      
-                  <div class="d-flex justify-content-end align-items-center mb-4 pt-2 pb-3">
-                    <p class="small mb-0 me-2 text-muted">Filter</p>
-                    <select class="select">
-                      <option value="1">Alle</option>
-                      <option value="2">Erledigt</option>
-                      <option value="3">Aktiv</option>
-                    </select>
-                    <a href="#!" style="color: #23af89;" data-mdb-toggle="tooltip" title="Ascending"><i class="fas fa-sort-amount-down-alt ms-2"></i></a>
-                  </div>
-      
-                  <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
-                    <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
-                      <div class="form-check">
-                        <input
-                          class="form-check-input me-0"
-                          type="checkbox"
-                          value=""
-                          id="flexCheckChecked1"
-                          aria-label="..."
-                          checked
-                        />
-                      </div>
-                    </li>
-                    <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
-                      <!--Name der Aufgabe festlegen-->
-                      <p class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded">Website online bereitstellen</p>
-                    </li>
-                    <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
-                      <div class="d-flex flex-row justify-content-end mb-1">
-                        <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
-                        <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
-                      </div>
-                      <div class="text-end text-muted">
-                        <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
-                          <!--Datum der Aufgabe festlegen-->
-                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i>01.10.2021</p></a>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal rounded-0">
-                    <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
-                      <div class="form-check">
-                        <input
-                          class="form-check-input me-0"
-                          type="checkbox"
-                          value=""
-                          id="flexCheckChecked2"
-                          aria-label="..."
-                          checked
-                        />
-                      </div>
-                    </li>
-                    <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
-                      <!--Name der Aufgabe festlegen-->
-                      <p class="lead fw-normal mb-0">Website-Design anpassen</p>
-                    </li>
-                    <li class="list-group-item px-3 py-1 d-flex align-items-center border-0 bg-transparent">
-                    </li>
-                    <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
-                      <div class="d-flex flex-row justify-content-end mb-1">
-                        <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
-                        <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
-                      </div>
-                      <div class="text-end text-muted">
-                        <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
-                          <!--Datum der Aufgabe festlegen-->
-                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i>04.10.2021</p></a>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal rounded-0 mb-2">
-                    <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
-                      <div class="form-check">
-                        <input
-                          class="form-check-input me-0"
-                          type="checkbox"
-                          value=""
-                          id="flexCheckChecked3"
-                          aria-label="..."
-                        />
-                      </div>
-                    </li>
-                    <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
-                      <!--Name der Aufgabe festlegen-->
-                      <p class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded">Login implementieren</p>
-                    </li>
-                    <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
-                      <div class="d-flex flex-row justify-content-end mb-1">
-                        <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
-                      </div>
-                      <div class="text-end text-muted">
-                        <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
-                          <!--Datum der Aufgabe festlegen-->
-                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i>05.10.2021</p></a>
-                      </div>
-                    </li>
-                  </ul>
-      
+
+                    <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input me-0"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked1"
+                            aria-label="..."
+                          />
+                        </div>
+                      </li>
+                      <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                        <p id=todo1 class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded"> 
+                          <script>
+                            if(x < anzahl ){
+                              todo1.innerHTML = todos[x]; 
+                              x++;
+                            }
+                          </script>
+                        </p>
+                      </li>
+                      <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="d-flex flex-row justify-content-end mb-1">
+                          <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
+                          <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="text-end text-muted">
+                          <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i></p></a>
+                        </div>
+                      </li>
+                    </ul>
+                    <!--To-Do2-->
+                    <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input me-0"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked2"
+                            aria-label="..."
+                          />
+                        </div>
+                      </li>
+                      <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                        <p id=todo2 class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded"> 
+                          <script>
+                            if(x < anzahl ){
+                              todo2.innerHTML = todos[x]; 
+                              x++;
+                            }
+                          </script>
+                        </p>
+                      </li>
+                      <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="d-flex flex-row justify-content-end mb-1">
+                          <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
+                          <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="text-end text-muted">
+                          <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i></p></a>
+                        </div>
+                      </li>
+                    </ul>
+                    <!--To-Do3-->
+                    <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input me-0"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked3"
+                            aria-label="..."
+                          />
+                        </div>
+                      </li>
+                      <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                        <p id=todo3 class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded"> 
+                          <script>
+                            if(x < anzahl ){
+                              todo3.innerHTML = todos[x]; 
+                              x++;
+                            }
+                          </script>
+                        </p>
+                      </li>
+                      <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="d-flex flex-row justify-content-end mb-1">
+                          <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
+                          <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="text-end text-muted">
+                          <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i></p></a>
+                        </div>
+                      </li>
+                    </ul>
+                    <!--To-Do4-->
+                    <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input me-0"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked4"
+                            aria-label="..."
+                          />
+                        </div>
+                      </li>
+                      <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                        <p id=todo4 class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded"> 
+                          <script>
+                            if(x < anzahl ){
+                              todo4.innerHTML = todos[x]; 
+                              x++;
+                            }
+                          </script>
+                        </p>
+                      </li>
+                      <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="d-flex flex-row justify-content-end mb-1">
+                          <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
+                          <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="text-end text-muted">
+                          <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i></p></a>
+                        </div>
+                      </li>
+                    </ul>
+                    <!--To-Do5-->
+                    <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input me-0"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked5"
+                            aria-label="..."
+                          />
+                        </div>
+                      </li>
+                      <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                        <p id=todo5 class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded"> 
+                          <script>
+                            if(x < anzahl ){
+                              todo5.innerHTML = todos[x]; 
+                              x++;
+                            }
+                          </script>
+                        </p>
+                      </li>
+                      <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="d-flex flex-row justify-content-end mb-1">
+                          <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
+                          <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="text-end text-muted">
+                          <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i></p></a>
+                        </div>
+                      </li>
+                    </ul>
+                    <!--To-Do6-->
+                    <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input me-0"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked6"
+                            aria-label="..."
+                          />
+                        </div>
+                      </li>
+                      <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                        <p id=todo6 class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded"> 
+                          <script>
+                            if(x < anzahl ){
+                              todo6.innerHTML = todos[x]; 
+                              x++;
+                            }
+                          </script>
+                        </p>
+                      </li>
+                      <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="d-flex flex-row justify-content-end mb-1">
+                          <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
+                          <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="text-end text-muted">
+                          <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i></p></a>
+                        </div>
+                      </li>
+                    </ul>
+                    <!--To-Do7-->
+                    <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input me-0"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked7"
+                            aria-label="..."
+                          />
+                        </div>
+                      </li>
+                      <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                        <p id=todo7 class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded"> 
+                          <script>
+                            if(x < anzahl ){
+                              todo7.innerHTML = todos[x]; 
+                              x++;
+                            }
+                          </script>
+                        </p>
+                      </li>
+                      <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="d-flex flex-row justify-content-end mb-1">
+                          <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
+                          <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="text-end text-muted">
+                          <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i></p></a>
+                        </div>
+                      </li>
+                    </ul>
+                    <!--To-Do8-->
+                    <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input me-0"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked8"
+                            aria-label="..."
+                          />
+                        </div>
+                      </li>
+                      <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                        <p id=todo8 class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded"> 
+                          <script>
+                            if(x < anzahl ){
+                              todo8.innerHTML = todos[x]; 
+                              x++;
+                            }
+                          </script>
+                        </p>
+                      </li>
+                      <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="d-flex flex-row justify-content-end mb-1">
+                          <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
+                          <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="text-end text-muted">
+                          <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i></p></a>
+                        </div>
+                      </li>
+                    </ul>
+                    <!--To-Do9-->
+                    <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input me-0"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked9"
+                            aria-label="..."
+                          />
+                        </div>
+                      </li>
+                      <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                        <p id=todo9 class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded"> 
+                          <script>
+                            if(x < anzahl ){
+                              todo9.innerHTML = todos[x]; 
+                              x++;
+                            }
+                          </script>
+                        </p>
+                      </li>
+                      <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="d-flex flex-row justify-content-end mb-1">
+                          <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
+                          <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="text-end text-muted">
+                          <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i></p></a>
+                        </div>
+                      </li>
+                    </ul>
+                    <!--To-Do10-->
+                    <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                      <li class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input me-0"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked10"
+                            aria-label="..."
+                          />
+                        </div>
+                      </li>
+                      <li class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                        <p id=todo10 class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded"> 
+                          <script>
+                            if(x < anzahl ){
+                              todo10.innerHTML = todos[x]; 
+                              x++;
+                            }
+                          </script>
+                        </p>
+                      </li>
+                      <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                        <div class="d-flex flex-row justify-content-end mb-1">
+                          <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i class="fas fa-pencil-alt me-3"></i></a>
+                          <a href="#!" class="text-danger" data-mdb-toggle="tooltip" title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="text-end text-muted">
+                          <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                          <p class="small mb-0"><i class="fas fa-info-circle me-2"></i></p></a>
+                        </div>
+                      </li>
+                    </ul>
+                    <button style="background-color: #CD3632;" onclick="löschen()" >Auswahl löschen</botton>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
+    </section>
+  
+                  
     <script>
     src="Bootstrap/js/bootstrap.min.js"
+    var test = 0;
     
     function AddingTask(){
 
-      console.log("Eine neue Aufgabe wurde hinzugefügt!");
+      if(anzahl < 10){
+        var str = document.getElementById("exampleFormControlInput1").value;
 
+        if(str == ""){
+          alert("Die Textangabe darf nicht leer sein!")
+        }else{
+          for(test = 0; test < 11; test++){
+            if(window.sessionStorage.getItem(test) == "undefined" || window.sessionStorage.getItem(test) == null){
+              window.sessionStorage.setItem(test, str);
+              anzahl++;
+              break;
+            }
+            
+          }
+          window.location.href ='https://zaccar94.github.io/todos.html';
+        }
+      }else{
+        alert("Maximale Anzahl an To-Dos erreicht!")
+      }
+    }
+
+    function löschen(){
+
+      if(document.getElementById("flexCheckChecked1").checked == true){
+        window.sessionStorage.removeItem(1);
+        anzahl--;
+      }
+      if(document.getElementById("flexCheckChecked2").checked == true){
+        window.sessionStorage.removeItem(2);
+        anzahl--;
+      }
+      if(document.getElementById("flexCheckChecked3").checked == true){
+        window.sessionStorage.removeItem(3);
+        anzahl--;
+      }
+      if(document.getElementById("flexCheckChecked4").checked == true){
+        window.sessionStorage.removeItem(4);
+        anzahl--;
+      }
+      if(document.getElementById("flexCheckChecked5").checked == true){
+        window.sessionStorage.removeItem(5);
+        anzahl--;
+      }
+      if(document.getElementById("flexCheckChecked6").checked == true){
+        window.sessionStorage.removeItem(6);
+        anzahl--;
+      }
+      if(document.getElementById("flexCheckChecked7").checked == true){
+        window.sessionStorage.removeItem(7);
+        anzahl--;
+      }
+      if(document.getElementById("flexCheckChecked8").checked == true){
+        window.sessionStorage.removeItem(8);
+        anzahl--;
+      }
+      if(document.getElementById("flexCheckChecked9").checked == true){
+        window.sessionStorage.removeItem(9);
+        anzahl--;
+      }
+      if(document.getElementById("flexCheckChecked10").checked == true){
+        window.sessionStorage.removeItem(10);
+        anzahl--;
+      }
+      window.location.href ='https://zaccar94.github.io/todos.html';
     }
 
     
